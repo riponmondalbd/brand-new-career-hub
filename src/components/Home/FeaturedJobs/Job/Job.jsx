@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -37,7 +38,7 @@ const Job = ({ job }) => {
           {salary}
         </div>
       </div>
-      <Link>
+      <Link to={`/statistics/${id}`}>
         <button className="text-xl font-extrabold text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF] py-[11px] px-[18px] rounded-[4px] mt-8">
           View Details
         </button>
@@ -48,6 +49,7 @@ const Job = ({ job }) => {
 
 Job.propTypes = {
   job: PropTypes.shape({
+    id: PropTypes.node,
     logo: PropTypes.node,
     job_title: PropTypes.node,
     company_name: PropTypes.node,
