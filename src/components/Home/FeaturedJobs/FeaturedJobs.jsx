@@ -24,6 +24,11 @@ const FeaturedJobs = () => {
           <Job key={job.id} job={job}></Job>
         ))}
       </div>
+      <div className="text-center">
+        <button className="text-xl font-extrabold text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF] py-[11px] px-[18px] rounded-[4px] mt-10 mb-10 md:mb-32">
+          See All Jobs
+        </button>
+      </div>
     </div>
   );
 };
