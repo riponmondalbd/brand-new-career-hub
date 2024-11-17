@@ -2,6 +2,9 @@ import { CiDollar, CiLocationOn } from "react-icons/ci";
 import { IoCalendarOutline, IoCallOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { setJobsToLocalStorage } from "../utility/localStorage";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -19,6 +22,12 @@ const JobDetails = () => {
     contact_information,
   } = job;
   //   console.log(jobs, id, job);
+
+  const handleApplyNow = () => {
+    setJobsToLocalStorage(idIdx);
+    toast("Added Successfully");
+  };
+
   return (
     <div>
       <div className="bg-gradient-to-r from-[#7E90FE0D] to-[#9873FF0D]">
@@ -108,12 +117,16 @@ const JobDetails = () => {
             </div>
           </div>
           <Link>
-            <button className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-xl font-extrabold text-white py-[19px]  rounded-lg w-full mt-6">
+            <button
+              onClick={handleApplyNow}
+              className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-xl font-extrabold text-white py-[19px]  rounded-lg w-full mt-6"
+            >
               Apply Now
             </button>
           </Link>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
