@@ -13,7 +13,7 @@ const Banner = () => {
               Dream Job
             </span>
           </h1>
-          <p className="text-lg font-medium mt-6 mb-8">
+          <p className="text-lg font-medium text-[#757575] mt-6 mb-8">
             Explore thousands of job opportunities with all the information you
             need. Its your future. Come find it. Manage all your job application
             from start to finish.
